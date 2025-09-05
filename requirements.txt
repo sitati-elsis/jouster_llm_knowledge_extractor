@@ -1,0 +1,6 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+pydantic==2.8.2
+python-dotenv==1.0.1
+# Optional: only used if you set USE_OPENAI=true
+openai==1.40.0
