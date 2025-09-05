@@ -17,6 +17,15 @@ Results are **persisted in SQLite** and searchable by topic/keyword.
 ## Quickstart
 
 ```bash
+
+# Download the Repository
+
+git clone git@github.com:sitati-elsis/jouster_llm_knowledge_extractor.git
+
+# cd into the repository you have just cloned
+cd jouster_llm_knowledge_extractor
+
+# Set up virtual environment and install dependencies
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
@@ -120,7 +129,7 @@ curl "http://127.0.0.1:8000/search?keyword=embeddings"
 
 ---
 
-## Design Choices (3–5 sentences)
+## Design Choices
 
 - **Simplicity first**: FastAPI + SQLite yields a small, self‑contained service that’s trivial to run and review. 
 - **Abstraction over LLM**: `summarize_text()` tries OpenAI *iff* `USE_OPENAI=true`; otherwise it uses a deterministic heuristic that extracts the first sentence or two and compresses them. Errors are caught and we fall back gracefully.
